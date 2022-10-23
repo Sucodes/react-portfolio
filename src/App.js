@@ -13,6 +13,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line no-unused-vars
     const scroll = new LocomotiveScroll({
       el: containerRef.current,
       smooth: true,
