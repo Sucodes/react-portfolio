@@ -1,0 +1,127 @@
+@import '../../styles/variable.scss';
+
+.projects {
+    height: 100vh;
+    margin-top: 100px;
+    overflow: hidden;
+    @include flexCenter(row);
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    font-family: 'Lato';
+
+    h1 {
+        background-color: transparent;
+        position: absolute;
+        font-size: $fontSizeMd;
+        font-weight: 600;
+        color: $iconColor;
+        text-shadow: 1px 1px 1px $textColor;
+        top: 1rem;
+        left: 0%;
+        z-index: 3;
+    }
+
+    &_sign {
+        height: inherit;
+        // position: fixed;
+        width: 15%;
+        z-index: 2;
+        left: 0;
+        @include flexCenter(row);
+        justify-content: flex-start;
+
+        svg {
+            fill: $iconColor;
+            font-size: 3em;
+        }
+    }
+
+    &_card {
+        height: inherit;
+        position: absolute;
+        left: 12%;
+        background-color: $iconColor;
+        padding-left: 8%;
+        @include flexCenter(row);
+        justify-content: flex-start;
+        cursor: grab;
+        overflow: hidden;
+
+        div {
+            @include line;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+            width: 12rem;
+            margin-right: 3rem;
+            border-radius: 8px;
+            text-shadow: 1px 1px 1px $textColor;
+
+            p {   
+                text-align: center;
+                background-color: transparent;
+
+                span {
+                    background-color: transparent;
+                    font-weight: 600;
+                }
+            }
+
+            h2 {
+                display: inline-block;
+                width: fit-content;
+                font-weight: 600;
+                background-color: transparent;
+            }
+
+            a {
+                background-color: transparent;
+                color: inherit;
+                text-decoration: none;
+            }
+
+        }
+    }
+}
+
+/***************** media queries **********************/
+@media(min-width: $md) {
+    .projects {
+
+        h1 {
+            font-size: $fontSizeLg;
+            left: 5%;
+        }
+
+        &_sign {
+            width: 35%;
+            @include flexCenter(row);
+
+            svg {
+                font-size: 5em;
+            }
+        }
+
+        &_card {
+            left: 35%;
+            padding-left: 30%;
+
+            div {
+                width: 20rem;
+                margin-right: 6rem;
+
+                a {
+                    h2 {
+                        display: inline-block;
+                        width: fit-content;
+                        font-weight: 500;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

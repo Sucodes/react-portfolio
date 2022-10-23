@@ -1,0 +1,17 @@
+@import '../../styles/variable.scss';
+
+.spinner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+    @include flexCenter(column);
+    z-index: 3;
+    color: $iconColor;
+    font-size: $fontSizeMd;
+    animation: ease-out 1s 2s 10s;
+}
+

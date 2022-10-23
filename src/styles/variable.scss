@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+/************ Font ********************/
+$fontFamily: 'Lato', 'Merriweather', sans-serif;
+$fontSizeSm: 1.1rem;
+$fontSizeMd: 3em;
+$fontSizeLg: 5rem;
+
+/************ Colors ********************/
+$backgroundColor: #111313;
+$textColor: #e2e2e3;
+$iconColor: #4d4d4e;
+
+/********** media queries **************/
+$md: 768px;
+$lg: 1024px;
+
+/************ Mixins ********************/
+@mixin flexCenter($direction) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin icon {
+    &:hover {
+        color: yellow;
+    }
+}
+
+@mixin btn {
+    border-radius: 4px;
+    border-bottom:1px solid $iconColor ;
+    padding: 10px 15px;
+}
+
+@mixin btnHover {
+    &:hover {
+        color: $textColor;
+        border-bottom: 1px solid yellow;
+    }
+}
+
+@mixin line {
+    hr {
+        width: 100%;
+        margin: 30px 0px;
+        opacity: 0.1;
+    }
+}
+
+@mixin transformHover {
+    &:hover {
+        animation-name: spinIcon;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 3s;
+    }
+
+    @keyframes spinIcon {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(180deg);
+        }
+    }
+}

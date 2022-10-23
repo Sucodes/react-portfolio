@@ -1,0 +1,67 @@
+@import '../../styles/variable.scss';
+
+.skills {
+    font-family: 'Lato';
+    padding-bottom: 50px;
+    
+    h1 {
+        text-shadow: 1px 1px 1px $textColor;
+        font-size: $fontSizeMd;
+        font-weight: 600;
+        color: $iconColor;
+    }
+
+    .icons {
+        @include flexCenter(row);
+        justify-content: space-around;
+        animation: scroll 40s linear infinite;
+        width: 500px;
+
+        svg {
+            height: 50px;
+            width: 2rem;
+            @include icon;
+            @include transformHover;
+        }
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-250px);
+    }
+}
+
+/******************** media queries **************************/
+
+@media (min-width: $md) {
+    .skills {
+
+        h1 {
+            font-size: $fontSizeLg;
+            font-weight: 900;
+        }
+
+        .icons {
+            width: 3000px;
+
+            svg {
+                width: 4rem;
+            }
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+    
+        100% {
+            transform: translateX(-1200px);
+        }
+    }
+}

@@ -1,0 +1,101 @@
+@import '../../styles/variable.scss';
+
+.navbar {
+    padding: 2rem 0px;
+    height: 40px;
+    background-color: $backgroundColor;
+    z-index: 2;
+    @include flexCenter(row);
+    justify-content: space-between;
+    border-bottom: 1px solid $iconColor;
+    font-family: 'Merriweather';
+
+    &_logo1 {
+        display: block;
+        font-size: $fontSizeSm;
+        color: $iconColor;
+        @include icon;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    &_logo2 {
+        display: none;
+    }
+
+    &_links {
+        @include flexCenter(row);
+
+        .menu {
+            font-size: $fontSizeSm;
+            display: block;
+            color: $iconColor;
+            @include icon;
+            margin-top: 5px;
+
+            &_links {
+                background-color: $backgroundColor;
+                color: $iconColor;
+                width: 100%;
+                height: 50vh;
+                position: absolute;
+                top: 10%;
+
+                ul {
+                    list-style: none;
+                    text-decoration: none;
+
+                    li {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .link {
+            display: none;
+        }
+    }
+}
+
+/*****************media queries********************/
+
+@media (min-width: 600px) {
+
+    .navbar {
+        &_logo1 {
+            display: none;
+        }
+
+        &_logo2 {
+            cursor: pointer;
+            display: block;
+            font-size: $fontSizeSm;
+            color: $iconColor;
+            @include icon;
+            text-decoration: none;
+        }
+
+        &_links {
+            width: 50%;
+
+            .menu {
+                display: none;
+            }
+
+            .link {
+                font-size: $fontSizeSm;
+                display: block;
+                width: 100%;
+                @include flexCenter(row);
+                justify-content: space-between;
+
+                p {
+                    cursor: pointer;
+                    color: $iconColor;
+                    @include icon; 
+                }
+            }
+        }
+    }
+}
