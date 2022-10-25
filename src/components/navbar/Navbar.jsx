@@ -6,22 +6,18 @@ import styles from "../navbar/Navbar.module.scss";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(true);
-  // const [showMenuBar, setMenuBar] = useState(true);
-
-  const menuClick = () => {
-    setMenu(!menu);
-  };
-
+  const [showMenuBar, setMenuBar] = useState(false);
+  
   const scroll = new LocomotiveScroll();
   const handleScroll = (id) => {
     let elem = document.querySelector(id);
-
+    
     scroll.scrollTo(elem, {
-      offset: "-100",
-      duration: "2000",
-      easing: [0.25, 0.0, 0.35, 1.0],
-    });
-  };
+    offset: "-100",
+    duration: "2000",
+    easing: [0.25, 0.0, 0.35, 1.0],
+    })
+  }
 
   const text = {
     hidden: {
@@ -40,16 +36,10 @@ const Navbar = () => {
     },
   };
 
-  // const showMenu = () => {
-  //   return `
-  //     <ul className={styles.menu_links}>
-  //       <li onClick={() => handleScroll("#home")}>Home</li>
-  //       <li onClick={() => handleScroll("#about")}>About</li>
-  //       <li onClick={() => handleScroll("#projects")}>Projects</li>
-  //       <li onClick={() => handleScroll("#contact")}>Say Hi</li>
-  //     </ul>
-  //   `;
-  // };
+  const showMenu = () => {
+    setMenu(!menu);
+    setMenuBar(!showMenuBar);
+  };
 
   return (
     <motion.div
@@ -83,20 +73,24 @@ const Navbar = () => {
       </motion.p>
 
       <nav className={styles.navbar_links}>
-        <p className={styles.menu} onClick={menuClick}>
+        <p className={styles.menu} onClick={showMenu}>
           {menu ? <AiOutlineMenu /> : <AiOutlineClose />}
         </p>
 
-        {/* {showMenuBar ? (
-          <ul className={styles.menu_links}>
-            <li onClick={() => handleScroll("#home")}>Home</li>
-            <li onClick={() => handleScroll("#about")}>About</li>
-            <li onClick={() => handleScroll("#projects")}>Projects</li>
-            <li onClick={() => handleScroll("#contact")}>Say Hi</li>
-          </ul>
-        ) : (
-          null
-        )} */}
+        {showMenuBar ? (
+          <motion.div
+          initial={{x: "100%"}}
+          animate={{x: "0"}}
+          transition={{duration: 0.5}}
+          className={styles.menu_bar}>
+            <ul>
+              <li onClick={() => handleScroll("#home")}>Home</li>
+              <li onClick={() => handleScroll("#about")}>About</li>
+              <li onClick={() => handleScroll("#projects")}>Projects</li>
+              <li onClick={() => handleScroll("#contact")}>Say Hi</li>
+            </ul>
+          </motion.div>
+        ) : null}
 
         <div className={styles.link}>
           <motion.p

@@ -4,10 +4,12 @@ import { motion } from 'framer-motion';
 
 const Spinner = () => {
   return (
-    <motion.div
-    className={styles.spinner}>
-      Loading...
-    </motion.div>
+    <>
+      <motion.div
+      className={styles.spinner}>
+        Loading...
+      </motion.div>
+    </>
   )
 }
 

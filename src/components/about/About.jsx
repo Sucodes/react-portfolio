@@ -42,11 +42,12 @@ const About = () => {
         </motion.div>
       </div>
       <br />
-      <hr />
 
       <div className={styles.about__stack}>
         <Skills />
       </div>
+
+      <hr />
     </section>
   );
 };

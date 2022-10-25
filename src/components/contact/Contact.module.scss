@@ -2,12 +2,12 @@
 
 .contact {
     font-size: $fontSizeSm;
-    margin: 0 auto;
+    margin: 0px 50px;
     margin-top: 150px;
     bottom: 0;
     height: 100vh;
     @include flexCenter(column);
-    justify-content: space-around;
+    justify-content: space-evenly;
     color: $iconColor;
     font-family: 'Lato';
     @include line;
@@ -17,6 +17,7 @@
         @include flexCenter(row);
 
         h1 {
+            text-shadow: 1px 1px 1px $textColor;
             line-height: 1;
             text-align: center;
         }
@@ -46,34 +47,12 @@
             }
         }
     }
-
-    ul {
-        width: 100%;
-        list-style: none;
-        @include flexCenter(row);
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        li {
-            a {
-                text-decoration: none;
-
-                p {
-                    @include icon;
-                    color: $iconColor;
-                }
-            }
-        }
-    }
-
-    span {
-        padding-bottom: 50px;
-    }
 }
 
 /**********************media queries************************/
 @media (min-width: $md) {
     .contact {
+        @include line;
 
         &_text {
             justify-content: flex-start;
@@ -83,13 +62,12 @@
             h1 {
                 width: 800px;
                 font-size: 1.6em;
-                text-shadow: 1px 1px 1px $textColor;
                 text-align: left;
             }
         }
 
         &_btn {
-    
+
             a {
                 @include flexCenter(row);
                 justify-content: flex-end;
@@ -101,11 +79,6 @@
                     font-size: 1.5em;
                 }
             }
-        }
-
-        ul {
-            font-size: $fontSizeSm;
-            justify-content: space-around;
         }
     }
 }

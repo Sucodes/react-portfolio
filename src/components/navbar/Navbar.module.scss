@@ -3,14 +3,17 @@
 .navbar {
     padding: 2rem 0px;
     height: 40px;
+    z-index: 4;
     background-color: $backgroundColor;
-    z-index: 2;
     @include flexCenter(row);
     justify-content: space-between;
     border-bottom: 1px solid $iconColor;
     font-family: 'Merriweather';
+    position: fixed;
+    width: 100%;
 
     &_logo1 {
+        margin-left: 50px;
         display: block;
         font-size: $fontSizeSm;
         color: $iconColor;
@@ -24,6 +27,7 @@
     }
 
     &_links {
+        margin-right: 50px;
         @include flexCenter(row);
 
         .menu {
@@ -33,20 +37,26 @@
             @include icon;
             margin-top: 5px;
 
-            &_links {
+            &_bar {
+                height: 50vh;
+                width: 100%;
                 background-color: $backgroundColor;
                 color: $iconColor;
-                width: 100%;
-                height: 50vh;
                 position: absolute;
-                top: 10%;
+                top: 40px;
+                right: 0;
+                z-index: 4;
 
                 ul {
+                    height: inherit;
+                    @include flexCenter(column);
+                    justify-content: space-around;
                     list-style: none;
                     text-decoration: none;
 
                     li {
-                        width: 100%;
+                        @include btnHover;
+                        cursor: pointer;
                     }
                 }
             }
@@ -60,14 +70,16 @@
 
 /*****************media queries********************/
 
-@media (min-width: 600px) {
-
+@media (min-width: $md) {
     .navbar {
+        position: fixed;
+
         &_logo1 {
             display: none;
         }
 
         &_logo2 {
+            margin-left: 50px;
             cursor: pointer;
             display: block;
             font-size: $fontSizeSm;
@@ -77,6 +89,7 @@
         }
 
         &_links {
+            margin-right: 50px;
             width: 50%;
 
             .menu {
@@ -93,9 +106,15 @@
                 p {
                     cursor: pointer;
                     color: $iconColor;
-                    @include icon; 
+                    @include icon;
                 }
             }
         }
+    }
+}
+
+@media (min-width: $lg) {
+    .navbar {
+        position: fixed;
     }
 }

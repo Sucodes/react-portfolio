@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "title": "MovieHubb",
+        "description": "A movie listing app that allows users to stream and download movies with searching, filtering and toggle theme functionalities.",
+        "stack": "JavaScript, REST API, SASS, HTML5",
+        "href": "https://sucodes.github.io/MovieHubb/",
+        "github": "https://github.com/Sucodes/MovieHubb"
+    },
+
+    {
+        "id": 2,
+        "title": "Portfolio",
+        "description": "A fully responsive, cross browser compatible Portfolio website with smooth scrolling animations.",
+        "stack": "React, React Hooks, SASS, JSON, Locomotive Scroll, Framer Motion",
+        "href": "https://master--mellifluous-moonbeam-c28d0a.netlify.app/",
+        "github": "https://github.com/Sucodes/react-portfolio"
+
+    },
+
+    {
+        "id": 3,
+        "title": "Telephone Validator",
+        "description": "A telephone number validator that enables users to identify the exact Nigerian network provider a number belongs to.",
+        "stack": "JavaScript, HTML5, SASS",
+        "href": "https://sucodes.github.io/Circle-177/",
+        "github": "https://github.com/Sucodes/Circle-177"
+    },
+
+    {
+        "id": 4,
+        "title": "Weather App",
+        "description": "An interactive and dynamic weather app with realtime fetching and displaying of weather details using API.",
+        "stack": "JavaScript, REST API, SASS, HTML5",
+        "href": "https://sucodes.github.io/Javascript-Weather-App/",
+        "github": "https://github.com/Sucodes/Javascript-Weather-App"
+    },
+
+    {
+        "id": 5,
+        "title": "Pixel Art Maker",
+        "description": "A cool pixel art maker built with entirely vanilla JavaScript and DOM manipulations.",
+        "stack": "JavaScript, HTML5, CSS3",
+        "href": "https://sucodes.github.io/project-pixel-art-maker-starter-master/",
+        "github": "https://github.com/Sucodes/project-pixel-art-maker-starter-master"
+    },
+
+    {
+        "id": 6,
+        "title": "Cowrywise Clone",
+        "description": "A fully responsive clone of Cowrywise landing page.",
+        "stack": "HTML5, SASS",
+        "href": "https://sucodes.github.io/Cowrywise_clone/",
+        "github": "https://github.com/Sucodes/Cowrywise_clone"
+    },
+
+    {
+        "id": 7,
+        "title": "Mini Calculator",
+        "description": "A simple calculator project made to perform basic arithmetic functions.",
+        "stack": "React, ContextAPI, SASS, React Hooks",
+        "href": "https://6344f7b1304cc658d6371d53--dapper-cassata-a1ec00.netlify.app/",
+        "github": "https://github.com/Sucodes/React-calculator-project"
+    }
+]

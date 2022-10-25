@@ -1,0 +1,43 @@
+@import '../../styles/variable.scss';
+
+.footer {
+    width: 100%;
+    @include flexCenter(column);
+    justify-content: space-between;
+    color: $iconColor;
+    font-family: 'Lato';
+
+    ul {
+        width: 100%;
+        list-style: none;
+        @include flexCenter(row);
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            a {
+                text-decoration: none;
+
+                p {
+                    @include icon;
+                    color: $iconColor;
+                }
+            }
+        }
+    }
+
+    span {
+        padding-bottom: 30px;
+        padding-top: 50px;
+    }
+}
+
+/*************** media queries ************************/
+@media (min-width: $md) {
+    .footer {
+        ul {
+            font-size: $fontSizeSm;
+            justify-content: space-around;
+        }
+    }
+}

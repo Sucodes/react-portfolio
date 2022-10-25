@@ -6,15 +6,15 @@ import { SiJavascript, SiGit } from "react-icons/si";
 
 const Skills = () => {
   return (
-    <motion.div 
-    initial={{x: '-400px' }}
+    <motion.div
+    initial={{x: '-200px' }}
     whileInView={{ x: 0 }}
     viewport={{once: false}}
     transition={{ duration: 1}}
     className={styles.skills}>
-      <motion.h1>
+      <h1>
         Tech Stack
-      </motion.h1>
+      </h1>
 
       <br />
 

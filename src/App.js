@@ -7,6 +7,7 @@ import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
 import LocomotiveScroll from "locomotive-scroll";
+// import Particles from "./components/Particles";
 
 function App() {
   const containerRef = useRef(null);
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <>
+      
       <AnimatePresence>{loading ? null : <Spinner />}</AnimatePresence>
       <AnimatePresence>
         <main
@@ -34,6 +36,7 @@ function App() {
           id="main"
           className="container"
         >
+          {/* <Particles /> */}
           <Navbar />
           <Header />
           <About />
