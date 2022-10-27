@@ -1,10 +1,10 @@
 # Portfolio v2.0
 
-![Portfolio banner](./images/Portfolio_Website.png)
+![Portfolio banner](./src/styles/assets/Portfolio_2.0.png)
 
 ## Basic Overview
 
-This project is a fully responsive Portfolio [Website](Suvwe’s Personal Portfolio (sucodes.netlify.app)) which was built using
+This ia a Portfolio [Website](https://sucodes.netlify.app/) with smooth scrolling animations built using
 - React
 - SASS 
 - Locomotive Scroll
