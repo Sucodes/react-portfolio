@@ -38,7 +38,7 @@
             margin-top: 5px;
 
             &_bar {
-                height: 50vh;
+                height: 100vh;
                 width: 100%;
                 background-color: $backgroundColor;
                 color: $iconColor;
@@ -48,7 +48,7 @@
                 z-index: 4;
 
                 ul {
-                    height: inherit;
+                    height: 50%;
                     @include flexCenter(column);
                     justify-content: space-around;
                     list-style: none;
