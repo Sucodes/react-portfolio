@@ -2,10 +2,10 @@ import React from "react";
 import Skills from "../skills/Skills";
 import { motion } from "framer-motion";
 import styles from "../about/About.module.scss";
+import { Textfit } from 'react-textfit';
 import profile from "../../styles/assets/profile.jpg";
 
 const About = () => {
-
   return (
     <section id="about" className={styles.about}>
       <div className={styles.about__description}>
@@ -17,8 +17,8 @@ const About = () => {
           >About</h1>
 
           <br />
-
-          <p>
+          
+          <Textfit mode="multi" className={styles.paragraph}>
             Hey there... Suvwe here (it's pronounced Su-way by the way). I'm a
             Software Developer with Frontend technology expertise, I enjoy
             creating interactive and accessible web solutions to improve user
@@ -28,7 +28,7 @@ const About = () => {
             That aside, I also enjoy binge-watching anime and Korean dramas,
             fan-girling over art pieces and on other days, being a Medical
             Doctor.
-          </p>
+          </Textfit>
         </div>
 
         <motion.div 

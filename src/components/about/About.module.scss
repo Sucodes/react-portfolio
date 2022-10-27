@@ -18,12 +18,12 @@
                 color: $iconColor;
             }
         
-            p {
+            .paragraph {
                 margin-top: 50px;
                 font-family: 'Merriweather';
                 text-align: justify;
                 font-size: $fontSizeSm;
-                line-height: 1.25;
+                line-height: 1.5;
             }
         }
 
@@ -54,11 +54,10 @@
                     text-align: left;
                 }
             
-                p {
+                .paragraph {
                     opacity: 0.9;
                     width: 500px;
                     background-color: transparent;
-                    letter-spacing: 1px;
                 }
             }
 
