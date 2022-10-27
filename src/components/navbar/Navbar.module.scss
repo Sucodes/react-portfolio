@@ -54,10 +54,13 @@
                     list-style: none;
                     text-decoration: none;
 
-                    li {
+                    a {
                         @include btnHover;
                         cursor: pointer;
+                        color: $iconColor;
+                        text-decoration: none;
                     }
+                    
                 }
             }
         }

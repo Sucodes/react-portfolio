@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import { motion } from "framer-motion";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { HashLink as Link } from 'react-router-hash-link';
 import styles from "../navbar/Navbar.module.scss";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(true);
   const [showMenuBar, setMenuBar] = useState(false);
   
-  const scroll = new LocomotiveScroll();
+  const {scroll} = new LocomotiveScroll();
   const handleScroll = (id) => {
     let elem = document.querySelector(id);
-    
     scroll.scrollTo(elem, {
     offset: "-100",
     duration: "2000",
@@ -83,11 +83,11 @@ const Navbar = () => {
           animate={{x: "0"}}
           transition={{duration: 0.5}}
           className={styles.menu_bar}>
-            <ul>
-              <li onClick={() => handleScroll("#home")}>Home</li>
-              <li onClick={() => handleScroll("#about")}>About</li>
-              <li onClick={() => handleScroll("#projects")}>Projects</li>
-              <li onClick={() => handleScroll("#contact")}>Say Hi</li>
+            <ul onClick={showMenu}>
+              <Link to='/' smooth>Home</Link>
+              <Link to='#about' smooth>About</Link>
+              <Link to='#projects' smooth>Projects</Link>
+              <Link to='#contact' smooth>Say Hi</Link>
             </ul>
           </motion.div>
         ) : null}

@@ -6,6 +6,7 @@ import Header from "./components/header/Header";
 import About from "./components/about/About";
 import Projects from "./components/projects/Projects";
 import Contact from "./components/contact/Contact";
+import BackToTop from "./components/button/BackToTop";
 import LocomotiveScroll from "locomotive-scroll";
 // import Particles from "./components/Particles";
 
@@ -22,12 +23,11 @@ function App() {
 
     setTimeout(() => {
       setLoading(true);
-    }, 1000);
+    }, 3000);
   }, []);
 
   return (
     <>
-      
       <AnimatePresence>{loading ? null : <Spinner />}</AnimatePresence>
       <AnimatePresence>
         <main
@@ -42,6 +42,7 @@ function App() {
           <About />
           <Projects />
           <Contact />
+          <BackToTop />
         </main>
       </AnimatePresence>
     </>
