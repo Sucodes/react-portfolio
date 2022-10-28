@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-import LocomotiveScroll from "locomotive-scroll";
+// import LocomotiveScroll from "locomotive-scroll";
 import { motion } from "framer-motion";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link } from "react-router-hash-link";
 import styles from "../navbar/Navbar.module.scss";
 
 const Navbar = () => {
-  const [menu, setMenu] = useState(true);
-  const [showMenuBar, setMenuBar] = useState(false);
-  
-  const {scroll} = new LocomotiveScroll();
-  const handleScroll = (id) => {
-    let elem = document.querySelector(id);
-    scroll.scrollTo(elem, {
-    offset: "-100",
-    duration: "2000",
-    easing: [0.25, 0.0, 0.35, 1.0],
-    })
-  }
+  const [{ menu, showMenuBar }, setMenu] = useState({
+    menu: true,
+    showMenuBar: false,
+  });
+  // const [showMenuBar, setMenuBar] = useState(false);
 
   const text = {
     hidden: {
@@ -37,8 +30,13 @@ const Navbar = () => {
   };
 
   const showMenu = () => {
-    setMenu(!menu);
-    setMenuBar(!showMenuBar);
+    // eslint-disable-next-line no-restricted-globals
+    event.preventDefault();
+    setMenu({
+      menu: !menu,
+      showMenuBar: !showMenuBar,
+    });
+    // setMenuBar(!showMenuBar);
   };
 
   return (
@@ -79,52 +77,71 @@ const Navbar = () => {
 
         {showMenuBar ? (
           <motion.div
-          initial={{x: "100%"}}
-          animate={{x: "0"}}
-          transition={{duration: 0.5}}
-          className={styles.menu_bar}>
+            initial={{ x: "100%" }}
+            animate={{ x: "0" }}
+            transition={{ duration: 0.5 }}
+            className={styles.menu_bar}
+          >
             <ul onClick={showMenu}>
-              <Link to='/' smooth>Home</Link>
-              <Link to='#about' smooth>About</Link>
-              <Link to='#projects' smooth>Projects</Link>
-              <Link to='#contact' smooth>Say Hi</Link>
+              <Link to="#home" smooth>
+                Home
+              </Link>
+              <Link to="#about" smooth>
+                About
+              </Link>
+              <Link to="#projects" smooth>
+                Projects
+              </Link>
+              <Link to="#contact" smooth>
+                Say Hi
+              </Link>
             </ul>
           </motion.div>
-        ) : null}
+        ) : (
+          ""
+        )}
 
         <div className={styles.link}>
-          <motion.p
-            className={styles.home_icon}
-            onClick={() => handleScroll("#home")}
-            whileHover={{ scale: 1.1, y: -5 }}
-            whileTap={{ scale: 0.9, y: 0 }}
-          >
-            Home
-          </motion.p>
-          <motion.p
-            className={styles.about}
-            onClick={() => handleScroll("#about")}
-            whileHover={{ scale: 1.1, y: -5 }}
-            whileTap={{ scale: 0.9, y: 0 }}
-          >
-            About
-          </motion.p>
-          <motion.p
-            className={styles.projects}
-            onClick={() => handleScroll("#projects")}
-            whileHover={{ scale: 1.1, y: -5 }}
-            whileTap={{ scale: 0.9, y: 0 }}
-          >
-            Projects
-          </motion.p>
-          <motion.p
-            className={styles.contact}
-            onClick={() => handleScroll("#contact")}
-            whileHover={{ scale: 1.1, y: -5 }}
-            whileTap={{ scale: 0.9, y: 0 }}
-          >
-            Say Hi
-          </motion.p>
+          <Link to="#home" smooth>
+            <motion.p
+              className={styles.home_icon}
+              // onClick={() => handleScroll("#home")}
+              whileHover={{ scale: 1.1, y: -5 }}
+              whileTap={{ scale: 0.9, y: 0 }}
+            >
+              Home
+            </motion.p>
+          </Link>
+          <Link to="#about" smooth>
+            <motion.p
+              className={styles.about}
+              // onClick={() => handleScroll("#about")}
+              whileHover={{ scale: 1.1, y: -5 }}
+              whileTap={{ scale: 0.9, y: 0 }}
+            >
+              About
+            </motion.p>
+          </Link>
+          <Link to="#projects" smooth>
+            <motion.p
+              className={styles.projects}
+              // onClick={() => handleScroll("#projects")}
+              whileHover={{ scale: 1.1, y: -5 }}
+              whileTap={{ scale: 0.9, y: 0 }}
+            >
+              Projects
+            </motion.p>
+          </Link>
+          <Link to="#contact" smooth>
+            <motion.p
+              className={styles.contact}
+              // onClick={() => handleScroll("#contact")}
+              whileHover={{ scale: 1.1, y: -5 }}
+              whileTap={{ scale: 0.9, y: 0 }}
+            >
+              Say Hi
+            </motion.p>
+          </Link>
         </div>
       </nav>
     </motion.div>
