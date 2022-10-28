@@ -7,25 +7,27 @@
     cursor: pointer;
     position: fixed;
 
-    div {
-        border-radius: 50%;
-        background-color: yellow;
-        border: 1px solid $iconColor;
-        box-shadow: 1px 1px 1px $textColor;
-        @include flexCenter(row);
-
-        svg {
-            padding: 10px;
-            font-size: 50px;
-            font-weight: 800;
-            fill: $iconColor;
-        }
-
-        &:hover {
-            background-color: $iconColor;
+    a {
+        div {
+            border-radius: 50%;
+            background-color: yellow;
+            border: 1px solid $iconColor;
+            box-shadow: 1px 1px 1px $textColor;
+            @include flexCenter(row);
 
             svg {
-                fill: $textColor;
+                padding: 10px;
+                font-size: 50px;
+                font-weight: 800;
+                fill: $iconColor;
+            }
+
+            &:hover {
+                background-color: $iconColor;
+
+                svg {
+                    fill: $textColor;
+                }
             }
         }
     }

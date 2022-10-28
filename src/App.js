@@ -31,7 +31,7 @@ function App() {
       <AnimatePresence>{loading ? null : <Spinner />}</AnimatePresence>
       <AnimatePresence>
         <main
-          data-scroll-container
+          // data-scroll-container
           ref={containerRef}
           id="main"
           className="container"

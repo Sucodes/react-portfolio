@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-// import LocomotiveScroll from "locomotive-scroll";
 import { motion } from "framer-motion";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { HashLink as Link } from "react-router-hash-link";
 import styles from "../navbar/Navbar.module.scss";
 
 const Navbar = () => {
@@ -10,7 +8,6 @@ const Navbar = () => {
     menu: true,
     showMenuBar: false,
   });
-  // const [showMenuBar, setMenuBar] = useState(false);
 
   const text = {
     hidden: {
@@ -30,13 +27,10 @@ const Navbar = () => {
   };
 
   const showMenu = () => {
-    // eslint-disable-next-line no-restricted-globals
-    event.preventDefault();
     setMenu({
       menu: !menu,
       showMenuBar: !showMenuBar,
     });
-    // setMenuBar(!showMenuBar);
   };
 
   return (
@@ -83,65 +77,61 @@ const Navbar = () => {
             className={styles.menu_bar}
           >
             <ul onClick={showMenu}>
-              <Link to="#home" smooth>
+              <a href="#home" data-scroll-to rel="noreferrer">
                 Home
-              </Link>
-              <Link to="#about" smooth>
+              </a>
+              <a href="#about" data-scroll-to rel="noreferrer">
                 About
-              </Link>
-              <Link to="#projects" smooth>
+              </a>
+              <a href="#projects" data-scroll-to rel="noreferrer">
                 Projects
-              </Link>
-              <Link to="#contact" smooth>
+              </a>
+              <a href="#contact" data-scroll-to rel="noreferrer">
                 Say Hi
-              </Link>
+              </a>
             </ul>
           </motion.div>
         ) : (
-          ""
+          null
         )}
 
         <div className={styles.link}>
-          <Link to="#home" smooth>
+          <a href="#home" data-scroll-to rel="noreferrer">
             <motion.p
               className={styles.home_icon}
-              // onClick={() => handleScroll("#home")}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.9, y: 0 }}
             >
               Home
             </motion.p>
-          </Link>
-          <Link to="#about" smooth>
+          </a>
+          <a href="#about" data-scroll-to rel="noreferrer">
             <motion.p
               className={styles.about}
-              // onClick={() => handleScroll("#about")}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.9, y: 0 }}
             >
               About
             </motion.p>
-          </Link>
-          <Link to="#projects" smooth>
+          </a>
+          <a href="#projects" data-scroll-to rel="noreferrer">
             <motion.p
               className={styles.projects}
-              // onClick={() => handleScroll("#projects")}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.9, y: 0 }}
             >
               Projects
             </motion.p>
-          </Link>
-          <Link to="#contact" smooth>
+          </a>
+          <a href="#contact" data-scroll-to rel="noreferrer">
             <motion.p
               className={styles.contact}
-              // onClick={() => handleScroll("#contact")}
               whileHover={{ scale: 1.1, y: -5 }}
               whileTap={{ scale: 0.9, y: 0 }}
             >
               Say Hi
             </motion.p>
-          </Link>
+          </a>
         </div>
       </nav>
     </motion.div>

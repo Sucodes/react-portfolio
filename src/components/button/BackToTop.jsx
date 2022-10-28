@@ -16,20 +16,15 @@ const BackToTop = () => {
     });
   }, []);
 
-  const scrollUp = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <div onClick={scrollUp} className={styles.btn}>
-      {backToTopButton ? (
-        <div>
-          <BsArrowUp />
-        </div>
-      ) : null}
+    <div className={styles.btn}>
+      <a href="#home" data-scroll-to rel="noreferrer">
+        {backToTopButton ? (
+          <div>
+            <BsArrowUp />
+          </div>
+        ) : null}
+      </a>
     </div>
   );
 };
